@@ -102,6 +102,131 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    const [
+      logBtn, errorBtn, countBtn, warnBtn, assertBtn, clearBtn,
+      dirBtn, dirxmlBtn, groupStartBtn, groupEndBtn,
+      tableBtn, startTimerBtn, endTimerBtn, traceBtn, globalErrorBtn
+    ] = errorBtns;
+
+    // 1. Console Log
+    logBtn.addEventListener('click', () => {
+      console.log("Console Log: Button was clicked.");
+    });
+
+    // 2. Console Error
+    errorBtn.addEventListener('click', () => {
+      console.error("Console Error: This is an error message.");
+    });
+
+    // 3. Console Count
+    countBtn.addEventListener('click', () => {
+      console.count("Console Count:");
+    });
+
+    // 4. Console Warn
+    warnBtn.addEventListener('click', () => {
+      console.warn("Console Warn: This is a warning message.");
+    });
+
+    // 5. Console Assert
+    assertBtn.addEventListener('click', () => {
+      let isFalse = false;
+      console.assert(isFalse, "Console Assert: Assertion failed because condition is false.");
+    });
+
+    // 6. Console Clear
+    clearBtn.addEventListener('click', () => {
+      console.clear();
+    });
+
+    // 7. Console Dir
+    dirBtn.addEventListener('click', () => {
+      console.dir(document.body);
+    });
+
+    // 8. Console dirxml
+    dirxmlBtn.addEventListener('click', () => {
+      console.dirxml(document.body);
+    });
+
+    // 9. Console Group Start
+    groupStartBtn.addEventListener('click', () => {
+      console.group("Console Group Start:");
+      console.log("Inside the group");
+    });
+
+    // 10. Console Group End
+    groupEndBtn.addEventListener('click', () => {
+      console.groupEnd();
+    });
+
+    // 11. Console Table
+    tableBtn.addEventListener('click', () => {
+      const sampleData = [
+        { name: "name_1", age: 20 },
+        { name: "name_2", age: 21 },
+        { name: "name_3", age: 22 }
+      ];
+      console.table(sampleData);
+    });
+
+    // 12. Console Time Start
+    startTimerBtn.addEventListener('click', () => {
+      console.time("Timer");
+    });
+
+    // 13. Console Time End
+    endTimerBtn.addEventListener('click', () => {
+      console.timeEnd("Timer");
+    });
+
+    // 14. Console Trace
+    traceBtn.addEventListener('click', () => {
+      function first() { second(); }
+      function second() { third(); }
+      function third() { console.trace("Trace Example"); }
+      first();
+    });
+
+    // 15. Trigger a Global Error
+    globalErrorBtn.addEventListener('click', () => {
+      nonExistentFunction(); // Will throw a ReferenceError
+    });
+
+    // Try/Catch/Finally Example
+    try {
+      let el = document.querySelector('#non-existent');
+      el.textContent = "This will fail";
+    } catch (err) {
+      console.error("Caught error using try/catch:", err);
+    } finally {
+      console.log("This always runs regardless of error.");
+    }
+
+    // Custom Error Class Example
+    class CustomError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "CustomError";
+      }
+    }
+
+    try {
+      throw new CustomError("This is a custom error!");
+    } catch (e) {
+     console.error(`${e.name}: ${e.message}`);
+    }
+
+    // Global error handler
+    window.onerror = function (message, source, lineno, colno, error) {
+      console.log("Global Error Handler Triggered:");
+      console.log("Message:", message);
+      console.log("Source:", source);
+      console.log("Line:", lineno);
+      console.log("Column:", colno);
+      console.log("Error object:", error);
+    };
+
   </script>
 </body>
 
