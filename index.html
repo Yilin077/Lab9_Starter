@@ -120,10 +120,12 @@
       console.log("Error object:", error);
     };
     
-    
+
     window.addEventListener("error", (event) => {
       console.log("Global error caught via event listener:", event.message);
     });
+
+    
 
     // 1. Console Log
     logBtn.addEventListener('click', () => {
