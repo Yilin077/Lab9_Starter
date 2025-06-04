@@ -111,7 +111,14 @@
       dirBtn, dirxmlBtn, groupStartBtn, groupEndBtn,
       tableBtn, startTimerBtn, endTimerBtn, traceBtn, globalErrorBtn
     ] = errorBtns;
-
+    window.onerror = function (message, source, lineno, colno, error) {
+      console.log("Global Error Handler Triggered:");
+      console.log("Message:", message);
+      console.log("Source:", source);
+      console.log("Line:", lineno);
+      console.log("Column:", colno);
+      console.log("Error object:", error);
+    };
     // 1. Console Log
     logBtn.addEventListener('click', () => {
       console.log("Console Log: Button was clicked.");
@@ -222,14 +229,14 @@
     }
 
     // Global error handler
-    window.onerror = function (message, source, lineno, colno, error) {
-      console.log("Global Error Handler Triggered:");
-      console.log("Message:", message);
-      console.log("Source:", source);
-      console.log("Line:", lineno);
-      console.log("Column:", colno);
-      console.log("Error object:", error);
-    };
+    //window.onerror = function (message, source, lineno, colno, error) {
+      //console.log("Global Error Handler Triggered:");
+      //console.log("Message:", message);
+      //console.log("Source:", source);
+      //console.log("Line:", lineno);
+      //console.log("Column:", colno);
+      //console.log("Error object:", error);
+    //};
 
   </script>
 </body>
