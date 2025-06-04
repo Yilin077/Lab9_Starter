@@ -213,28 +213,28 @@
     });
 
     // Try/Catch/Finally Example
-    //try {
-      //let el = document.querySelector('#non-existent');
-      //el.textContent = "This will fail";
-    //} catch (err) {
-      //console.error("Caught error using try/catch:", err);
-    //} finally {
-      //console.log("This always runs regardless of error.");
-    //}
+    try {
+      let el = document.querySelector('#non-existent');
+      el.textContent = "This will fail";
+    } catch (err) {
+      console.error("Caught error using try/catch:", err);
+    } finally {
+      console.log("This always runs regardless of error.");
+    }
 
     // Custom Error Class Example
-    //class CustomError extends Error {
-      //constructor(message) {
-        //super(message);
-        //this.name = "CustomError";
-      //}
-    //}
+    class CustomError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "CustomError";
+      }
+    }
 
-    //try {
-      //throw new CustomError("This is a custom error!");
-    //} catch (e) {
-    //console.error(`${e.name}: ${e.message}`);
-    //}
+    try {
+      throw new CustomError("This is a custom error!");
+    } catch (e) {
+    console.error(`${e.name}: ${e.message}`);
+    }
 
     // Global error handler
     //window.onerror = function (message, source, lineno, colno, error) {
