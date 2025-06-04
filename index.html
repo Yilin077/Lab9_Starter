@@ -223,18 +223,18 @@
     }
 
     // Custom Error Class Example
-    class CustomError extends Error {
-      constructor(message) {
-        super(message);
-        this.name = "CustomError";
-      }
-    }
+    //class CustomError extends Error {
+      //constructor(message) {
+        //super(message);
+        //this.name = "CustomError";
+      //}
+    //}
 
-    try {
-      throw new CustomError("This is a custom error!");
-    } catch (e) {
-    console.error(`${e.name}: ${e.message}`);
-    }
+    //try {
+      //throw new CustomError("This is a custom error!");
+    //} catch (e) {
+    //console.error(`${e.name}: ${e.message}`);
+    //}
 
     // Global error handler
     //window.onerror = function (message, source, lineno, colno, error) {
